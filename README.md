@@ -310,7 +310,7 @@ docker run --rm -p 5000:5000 ds-ml-service
 
 ### 9. ทดสอบการเรียกใช้ API
 
-*เรียกใช้งานผ่าน Powershell
+* เรียกใช้งานผ่าน Powershell
 ```
 Invoke-WebRequest -Uri "http://127.0.0.1:5000/predict" `  -Method POST `  -Body '{"features":[8.3,25.0,6.0,1.0,1200,3.0,34.2,-118.3]}' `  -ContentType "application/json"
 ```
