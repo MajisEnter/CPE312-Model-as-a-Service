@@ -32,7 +32,7 @@ ml_service/
 * Dataset ที่ใช้คือ Dataset : **California_housing**
 * มีจำนวน **Instance : 20640**, ทั้งหมดเป็น **Numeric Attributes (มีทั้งหมด 8 ตัว)**
 * ค่า Target ของ Dataset นี้ที่ใช้ Predict คือค่า **Median ของมูลค่าบ้านใน California โดยมีหน่วยเป็น $100,000** 
-กล่าวคือถ้าค่า Predict : 0.32 ค่า Median ของมูลค่าบ้านที่ได้คือ 0.32 * $100,000 = $367,200
+กล่าวคือถ้าค่า Predict : 4.039 ค่า Median ของมูลค่าบ้านที่ได้คือ 4.039 * $100,000 = $403,900
 * Model ในการทำนายเป็นรูปแบบ **RandomForestRegressor**
 
 ```python
@@ -277,7 +277,6 @@ EXPOSE 5000
 
 # สั่งให้รัน Flask app ผ่าน Gunicorn (production server)
 CMD ["gunicorn", "-w", "2", "-b", "0.0.0.0:5000", "app:app"]
-
 ```
 ---
 
@@ -287,16 +286,13 @@ CMD ["gunicorn", "-w", "2", "-b", "0.0.0.0:5000", "app:app"]
 cd <ตำแหน่ง ของโฟลเดอร์>
 ```
 cd D:\CPE312\ml_service
-
 ```
 ใช้คำสั่ง docker build -t <ชื่อ image ตามที่ต้องการ>
 * . หมายถึง Folder ปัจจุบัน
 * คำสั่งนี้ให้ Docker อ่าน Dockerfile แล้วปฏิบัติตามคำสั่งเพื่อสร้าง Docker Image โดยชื่อที่ได้ตามตัวอย่างคือ ds-ml-service
 
 ```
-
 docker build -t ds-ml-service .
-
 ```
 
 สร้างและรัน Container ใหม่
@@ -317,7 +313,6 @@ docker run --rm -p 5000:5000 ds-ml-service
 *เรียกใช้งานผ่าน Powershell
 ```
 Invoke-WebRequest -Uri "http://127.0.0.1:5000/predict" `  -Method POST `  -Body '{"features":[8.3,25.0,6.0,1.0,1200,3.0,34.2,-118.3]}' `  -ContentType "application/json"
-
 ```
 
 ### 10. เตรียมความพร้อมสำหรับการ Push
