@@ -314,7 +314,3 @@ docker run --rm -p 5000:5000 ds-ml-service
 ```
 Invoke-WebRequest -Uri "http://127.0.0.1:5000/predict" `  -Method POST `  -Body '{"features":[8.3,25.0,6.0,1.0,1200,3.0,34.2,-118.3]}' `  -ContentType "application/json"
 ```
-
-### 10. เตรียมความพร้อมสำหรับการ Push
-* สร้าง README.md เพื่อเพิ่มข้อมูลต่างๆ
-* สร้าง .gitignore เมื่อต้องการระบุไฟล์ที่ไม่ต้องการให้ถูก Push ไปยัง GitHub
